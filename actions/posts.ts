@@ -1,7 +1,7 @@
 'use server'
 
 import { uploadImage } from "@/lib/cloudinary";
-import { storePost } from "@/lib/posts";
+import { storePost, updatePostLikeStatus } from "@/lib/posts";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -55,6 +55,11 @@ export async function createPost(prevState: any, formData: FormData) {
     throw new Error('Store image error, please try again.');
   }
 
-  revalidatePath('/feed');
-  redirect('/feed');
+  revalidatePath('/', 'layout')
+  redirect('/feed')
+}
+
+export async function togglePostLikeStatus(postId: number) {
+  await updatePostLikeStatus(postId, 2)
+  revalidatePath('/', 'layout')
 }
