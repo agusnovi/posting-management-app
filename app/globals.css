@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family:'Courier New', Courier, monospace;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #050505cd
+}
+
+.main {
+  width: min(90%, 1300px);
+  margin: 32px auto;
+  color: white;
+}
