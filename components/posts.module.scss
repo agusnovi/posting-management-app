@@ -16,11 +16,13 @@
 
 .image {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 8rem;
+    height: 6rem;
 }
 
 .image img {
+    width: 8rem;
+    height: 6rem;
     object-fit: cover;
 }
 

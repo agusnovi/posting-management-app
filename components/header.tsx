@@ -14,7 +14,13 @@ export default function Header() {
       <>
         <div className={styles.mobile}>
           <Link href="/" className={styles.image}>
-            <Image src={logo} alt="mobile-logo" fill />
+            <Image
+              priority
+              src={logo}
+              alt="mobile-logo"
+              width={80}
+              height={80}
+            />
           </Link>
           <button className={styles.menu} onClick={() => setOpen(true)}>
             <svg
@@ -46,7 +52,7 @@ export default function Header() {
             <li className={styles['desktop-logo']}>
               <Link href="/" onNavigate={() => setOpen(false)}>
                 <div className={styles.image}>
-                  <Image src={logo} alt="logo" fill />
+                  <Image priority src={logo} alt="logo" width={80} height={80} />
                 </div>
               </Link>
             </li>
